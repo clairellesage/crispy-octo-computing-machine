@@ -1,0 +1,10 @@
+.env
+.zshrc
+output.txt
+output1.txt
+data.txt
+text_sample.txt
+/bin
+/include
+/lib
+/spotter-env
