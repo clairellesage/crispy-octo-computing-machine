@@ -330,7 +330,7 @@ def get_transcript_texts(transcripts):
   pprint(cleaned_transcripts)
   return cleaned_transcripts
 
-def split_transcript_by_tag(texts):
+def split_transcripts_by_tag(texts):
   split_texts = []
   pprint(texts)
   for t in texts:
@@ -355,7 +355,7 @@ def main():
   # texts = get_transcript_texts(transcripts)
   texts = get_transcript_texts(data)
   texts = data
-  split = split_transcript_by_tag(texts)
+  split = split_transcripts_by_tag(texts)
   new_transcripts = match_texts_by_segment(texts, split)
   # return
   return new_transcripts
@@ -366,12 +366,6 @@ main()
 # starts = [int(line['start']) for line in transcript]
 # durations = [int(line['duration']) for line in transcript]
 
-# flattened = ", ".join(texts)
-# split = flattened.split("[Music]")
-# print(split[0])
-# print(split[1])
-# print(split[2])
-# print(len(split))
 
 # print(statistics.median(int(line['duration'])))
 # print(statistics.median(starts))
