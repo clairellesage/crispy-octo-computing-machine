@@ -8,6 +8,5 @@ To run:
     - pip install -r requirements.txt
     - acquire YOUTUBE_API_KEY, OPENAI_API_KEY and put tokens .ent file
     - from the command line in the repository, run
-        - `python3 get_data.py` to acquire latest video transcripts
         - `python3 get_beat_sheet.py` > outputs sample beat sheet to cmd line
         - `python3 get_creator_sample.py` > output creator sample to cmd line
