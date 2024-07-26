@@ -1,7 +1,7 @@
 This repository contains scripts to:
     1) retrieve youtube data (get_data.py)
-    2) extract a beat sheet (get_beat_sheet.py)
-    3) write a sample transcript (get_creator_sample.py)
+    2) extract a beat sheet (get_beat_sheet.py) output: sample_beat.txt
+    3) write a sample transcript (get_creator_sample.py) output: sample_stunt_driver.txt
 
 To run:
     - clone the repository
