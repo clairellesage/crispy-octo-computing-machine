@@ -38,7 +38,7 @@ def split_transcripts_by_tag(texts):
     split_texts.append({video: segments})
   return split_texts
   
-request = youtube.search().list(part="snippet", maxResults=2, channelId=channel_id, type="video", order="date")
+request = youtube.search().list(part="snippet", maxResults=20, channelId=channel_id, type="video", order="date")
 response = request.execute()  
 
 def get_data():
