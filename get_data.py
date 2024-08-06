@@ -28,23 +28,19 @@ def get_transcript_texts(transcripts):
 
 def split_transcripts_by_tag(texts):
   split_texts = []
-  # {len(texts[0].items())} 
-  pprint(f"texts[0].items() {texts[0]}.items()")
-  for video, t in texts[0].items():
-    flattened = " ".join(t)
-    regex = r"\s\[.*?\]\s"
-    segments = re.split(regex, flattened)
-    segments = [s.replace("'", "") for s in segments]
-    split_texts.append({video: segments})
+  for text in texts:
+    for video, t in text.items():
+      flattened = " ".join(t)
+      regex = r"\s\[.*?\]\s"
+      segments = re.split(regex, flattened)
+      segments = [s.replace("'", "") for s in segments]
+      split_texts.append({video: segments})
   return split_texts
   
 request = youtube.search().list(part="snippet", maxResults=20, channelId=channel_id, type="video", order="date")
 response = request.execute()  
 
 def get_data():
-  # search for latest 20 videos given channel id
-
-  # get the video_ids from the response
   video_ids = [i['id']['videoId'] for i in response['items']]
   transcripts = deepcopy(YouTubeTranscriptApi.get_transcripts(video_ids))
   print(f"loaded {len(list(transcripts))} youtube transcripts")
@@ -54,5 +50,3 @@ def get_data():
   pprint(f"split {len(split_transcripts)} transcripts : {split_transcripts}")
   print("sending split transcripts to openai")
   return split_transcripts
-
-get_data()

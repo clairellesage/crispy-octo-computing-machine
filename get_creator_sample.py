@@ -18,6 +18,6 @@ def main():
             {"role": "user", "content": content}
         ]
     )
-    print(completion.choices[0].message)
+    print(completion.choices[0].message.content)
 
 main()
